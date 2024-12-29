@@ -35,7 +35,7 @@ public class Welcome extends HttpServlet {
 		}
 		catch(Exception e)
 		{
-			System.out.println(e+"in welcome.java page");
+			System.out.println(e+" in welcome.java page");
 		}
 	}
 }
