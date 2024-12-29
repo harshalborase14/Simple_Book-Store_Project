@@ -17,23 +17,23 @@ public class CustomerRegister extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		HttpSession session = req.getSession();
-	    String customerName = req.getParameter("name");
-	    String phoneNo = req.getParameter("phone");
-	    String address = req.getParameter("addr");
-	    String orderDate = req.getParameter("date");
-	    Date dt=java.sql.Date.valueOf(orderDate);
-	    String bookId = (String) session.getAttribute("bid");
-	    String qty = (String) session.getAttribute("Qty");
-	    int qt1 = Integer.parseInt(qty);
+	 String customerName = req.getParameter("name");
+	 String phoneNo = req.getParameter("phone");
+	 String address = req.getParameter("addr");
+	 String orderDate = req.getParameter("date");
+	 Date dt=java.sql.Date.valueOf(orderDate);
+	 String bookId = (String) session.getAttribute("bid");
+	 String qty = (String) session.getAttribute("Qty");
+	 int qt1 = Integer.parseInt(qty);
 		try
 		{
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			System.out.println("Driver Loaded in CustomerRegister.java");
+			   Class.forName("com.mysql.cj.jdbc.Driver");
+		    System.out.println("Driver Loaded in CustomerRegister.java");
 			
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbname","root","rootpassword");
-			System.out.println("Connection success in CustomerRegister.java");
+			   Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbname","root","rootpassword");
+		    System.out.println("Connection success in CustomerRegister.java");
 			
-			PreparedStatement pstm=con.prepareStatement("insert into customer_details(customer_Name,phoneNo,Address,qty,Book_Id,order_Date) values(?,?,?,?,?,?);");
+			  PreparedStatement pstm=con.prepareStatement("insert into customer_details(customer_Name,phoneNo,Address,qty,Book_Id,order_Date) values(?,?,?,?,?,?);");
 			
 			pstm.setString(1, customerName);
 	        pstm.setString(2, phoneNo);
