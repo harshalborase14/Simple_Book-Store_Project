@@ -22,7 +22,7 @@ public class Welcome extends HttpServlet {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("Connection Success");
 			
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookproject","root","Harshal@1402");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbname","root","rootpassword");
 			System.out.println("Connection Success");
 			
 			Statement stm = con.createStatement();
