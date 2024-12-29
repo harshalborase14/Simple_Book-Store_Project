@@ -30,7 +30,7 @@ public class CustomerRegister extends HttpServlet {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("Driver Loaded in CustomerRegister.java");
 			
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookproject","root","Harshal@1402");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbname","root","rootpassword");
 			System.out.println("Connection success in CustomerRegister.java");
 			
 			PreparedStatement pstm=con.prepareStatement("insert into customer_details(customer_Name,phoneNo,Address,qty,Book_Id,order_Date) values(?,?,?,?,?,?);");
